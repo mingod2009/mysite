@@ -1,0 +1,25 @@
+{% extends 'learn/base.html' %}
+{% block title %} {{str}} {% endblock%}
+{% block content%} 
+	<p>{{str}}</p>
+	<ul>
+		{% for i in appList %}
+			<li>
+				{{i}}
+			</li>
+		{% endfor %}
+	</ul>
+	参数个数：{{appMap.len}}
+	{% for key, value in appMap.items %}
+	{{key}}, {{value}}
+	{% endfor %}
+	<hr/>
+	{% for item in List%}
+		{{item}} {% if not forloop.last %},{%endif%}
+	{% endfor%}
+	<br/>
+	{% url 'add2' 4 5%}
+	<br/>
+	{{request.path}}, {{request.GET.urlencode}}
+{% endblock%}
+
